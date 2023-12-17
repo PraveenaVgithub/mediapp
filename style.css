@@ -1,0 +1,130 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+    background-image: url('../pur.webp');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.container {
+    max-width: 620px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: (222, 219, 224);
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(105, 5, 136, 0.918);
+    margin-top: 16px;
+}
+
+h1 {
+    text-align: center;
+    color:rgb(12, 12, 12);
+    z-index: -3;
+}
+
+
+
+.gradient-border {
+    --borderWidth: 3px;
+    /* background: rgb(224, 188, 220); */
+    position: relative;
+    border-radius: var(--borderWidth);
+  }
+  .gradient-border:after {
+    content: '';
+    position: absolute;
+    top: calc(-1 * var(--borderWidth));
+    left: calc(-1 * var(--borderWidth));
+    height: calc(100% + var(--borderWidth) * 2);
+    width: calc(100% + var(--borderWidth) * 2);
+    /* background-color :#9921e8;  */
+    background-color: #6247aa;
+    background-image: linear-gradient(316deg, #6247aa 0%, #a594f9 74%);
+
+    /* background: linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82); */
+    border-radius: calc(2 * var(--borderWidth));
+    z-index: -1;
+    animation: animatedgradient 3s ease alternate infinite;
+    background-size: 300% 300%;
+  }
+  
+  
+  @keyframes animatedgradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  
+
+.reminder-form {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+input[type="text"] {
+    flex-grow: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+button {
+    background-color: #8a2be2;
+    margin-right: 6px;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Styling for reminder list */
+.reminders h2 {
+    margin-top: 20px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+/* Styling for each reminder item */
+/* Styling for each reminder item */
+.reminder-item {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between; /* Add this property */
+    align-items: center; /* Vertically center the content */
+}
+
+/* Styling for Edit and Delete buttons */
+.edit-button,
+.delete-button {
+    background-color: #8a2be2; /* Purple background color */
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+    
+
+}
+
+/* Move the Edit and Delete buttons to the right */
+.edit-button{
+    margin-right: 5px;
+}

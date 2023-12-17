@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./icons8-pill-48.png">
+    <title>Medi_track</title>
+    <style>
+
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+
+        .tablet {
+            width: 200px;
+            height: 300px;
+            background-color: #fff;
+            border-radius: 20px;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .tablet img {
+            width: 80px;
+            height: auto;
+            animation: breathe 2s infinite; /* Add the breathe animation */
+        }
+
+        .loading-text {
+            font-size: 18px;
+            color: #333;
+            margin-top: 20px;
+        }
+
+        @keyframes breathe {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(0.9);
+            }
+        }
+
+        .spinner {
+            width: 40px;
+            height: 40px;
+            border: 4px solid #8a2be2;
+            border-top: 4px solid transparent;
+            border-radius: 50%;
+            animation: rotate 1s linear infinite;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="tablet">
+        <img src="./icons8-pill-48.png" alt="Tablet Icon">
+        <div class="loading-text">Loading...</div>
+        <div class="spinner"></div>
+    </div>
+</body>
+
+    <script>
+        // Function to redirect to another page after 3 seconds
+        function redirectToAnotherPage() {
+            window.location.href = "./pill.html"; // Replace with the URL of your other page
+        }
+
+        // Use setTimeout to wait for 3 seconds and then call the redirection function
+        setTimeout(redirectToAnotherPage, 3000); // 3000 milliseconds = 3 seconds
+    </script>
+</body>
+</html>

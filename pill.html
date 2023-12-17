@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="icon" href="./icons8-pill-48.png">
+<link href="./add/rem.html">
+<title>Medi_track</title>
+<style>
+body{
+    font-family: sans-serif;
+    color: #333;
+    background-color: #fff;
+    background-image: url('../uu.avif'); /* Replace with the path to your image */
+    background-size: cover; /* This ensures the image covers the entire background */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-attachment: fixed; /* Keeps the image fixed when scrolling */
+}
+
+.pill-reminder {
+    width: 300px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    background-color: rgb(222, 219, 224);
+}
+
+.pill-reminder-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.pill-reminder-header h1 {
+    font-size: 20px;
+    margin: 0;
+    color: #000;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.pill-reminder-header button {
+    background-color:  #8a2be2;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.pill-reminder-body {
+    margin-top: 20px;
+}
+
+.pill-reminder-body p {
+    font-size: 20px;
+    margin: 0;
+    color: #2b0235;
+    font-weight: 200;
+    font-style: oblique;
+}
+
+/* Style the paragraphs within the progress-bar class */
+.pill-reminder-body .progress-bar p {
+    font-size: 14px; /* Adjust the font size */
+    color: #777; /* Change the text color */
+    margin-top: 5px; /* Add some spacing between paragraphs */
+}
+
+.pill-reminder-footer {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.pill-reminder-footer button {
+    background-color:  #8a2be2;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    cursor:pointer;
+}
+.progress-bar .progress p{
+  margin-top:16px;
+  font-size: 30px ;
+
+  
+}
+
+
+.plus-icon {
+    font-size: 30px; /* Adjust the size as needed */
+}
+
+/* Media queries */
+
+@media (max-width: 576px) {
+    .pill-reminder {
+        padding: 10px; /* Adjust padding for smaller screens */
+    }
+
+    .pill-reminder-header {
+        flex-direction: column; /* Stack header content for smaller screens */
+        text-align: center;
+    }
+
+    .pill-reminder-header h1 {
+        font-size: 18px; /* Reduce font size for smaller screens */
+    }
+}
+</style>
+</head>
+<body>
+<div class="pill-reminder">
+  <div class="pill-reminder-header">
+    <h1>Pill Reminder</h1>
+    <a href="../add/rem.html"><button id="add-medication-button"> <span class="plus-icon">&#43;</span></button></a>
+  </div>
+  <div class="pill-reminder-body">
+    <p id="date-placeholder"></p>
+
+    <div class="progress-bar">
+      <div class="progress">
+      <p>No medications to take on this day</p>
+    <p>Tap the "+" button to add a medication</p>
+    </div>
+  </div>
+  <div class="pill-reminder-footer">
+   <a href="./index.html" ><button id="back-button">Back</button></a>
+  </div>
+</div>
+</body>
+
+
+<script>
+  // Get the current date
+  const currentDate = new Date();
+
+  // Define the days of the week and months
+  const daysOfWeek = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  const months = [
+    "Jan", "Feb", "Mar", "Apr", "May", "Jun",
+    "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
+  ];
+
+  // Get the day, month, and year
+  const dayOfWeek = daysOfWeek[currentDate.getDay()];
+  const month = months[currentDate.getMonth()];
+  const day = currentDate.getDate();
+  const year = currentDate.getFullYear();
+
+  // Update the date placeholder with the dynamic date
+  const datePlaceholder = document.getElementById("date-placeholder");
+  datePlaceholder.textContent = `Today (${dayOfWeek}, ${month} ${day}, ${year})`;
+  
+  // Get a reference to the "Add Medication" button
+  const addMedicationButton = document.getElementById("add-medication-button");
+
+  // Add a click event listener to the button
+  addMedicationButton.addEventListener("click", function() {
+    // Navigate to the custom page by changing the location (URL)
+    location.href = "D:/2e2a/add/rem.html"; // Replace with the actual file name of your custom page
+  });
+
+ // Get a reference to the "Back" button
+
+
+</script>
+
+</html>
